@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    
+.dropbtn {
+  background-color:  #18c0d6;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:  #18c0d6;
+}
+.layer{
+          position: absolute;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.6);
+          width: 100%;
+          height: 100%;
+        }
+        
+        
+        .cons{
+          position: absolute;
+          bottom: 0;
+          top: 200px;
+          color: black;
+          font-size: 40px;
+          font-family: cursive;
+          margin-top: 70px;
+        }
+        .con{    
+          position: absolute;
+          bottom: 0;
+          top: 130px;
+          color: black;
+          font-size: 60px;
+        }
+        .zoom-wrapper{
+        height: 370px;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+    .zoom-wrapper img{
+        object-fit: cover;
+        transition: transform 0.8s;
+        height: 100%;
+    }
+    .zoom-wrapper:hover img{
+        -ms-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    @media screen and (min-width: 35.625em) and (max-width: 47.99875em){}
+.burgess-difference .generic-section-detail {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.generic-section-detail {
+    text-align: center;
+}
+@media screen and (min-width: 35.625em) and (max-width: 47.99875em){
+.burgess-diference__panel {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.burgess-diference__panel {
+    text-align: center;
+}}
+@media screen and (min-width: 35.625em) and (max-width: 47.99875em){
+.burgess-diference__panel {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+.burgess-diference__panel {
+    text-align: center;
+}}
+.meet:hover{
+text-decoration: none;
+}
+body{
+        background-color: var( --primary-color  );
+    }
+    *,
+    *:after,
+    *:before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+ 
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .column {
+        flex: 0 0 40%;
+        margin-top: 100px;
+    }
+    
+    .card {
+        border: 1px solid;
+        min-height: 100%;
+        position: relative;
+        background-color: #18c0d6;
+        margin-top: 120px;
+        
+        transition: all 0.3s ease-out;
+    }
+    
+    .card .description-wrap {
+        padding: 105px 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .card .description {
+        color: var(  --primary-color);
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        font-size: 20px;
+        line-height: 1.4;
+        transition: all 0.5s ease-out;
+        overflow: auto;
+        transform: rotateY(100%);
+        opacity: 0;
+    }
+    
+    .card .description>* {
+        width: 100%;
+    }
+    
+    .card .description h3 {
+        margin: 0;
+        font-size: 26px;
+    }
+    
+    .card .description h4 {
+        margin: 0;
+    }
+    
+    .card .description ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        height: auto;
+    }
+    
+    .card .description ul li {
+        display: inline-block;
+        width: 40px;
+        margin: 0 10px;
+        transition: all 0.3s ease-out;
+        transform: perspective(1000px) rotateX(0deg);
+    }
+    
+    .card .description ul li:hover {
+        transform: perspective(1000px)rotateX(30deg);
+    }
+    
+    .card .description ul li i {
+        max-width: 100%;
+        line-height: 60px;
+        text-decoration: none;
+        color: var(  --primary-color);
+    }
+    
+    .pro-pic {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-50%);
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease-out;
+    }
+    
+    .card:hover .pro-pic {
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    
+    .card:hover {
+        border-radius: 50px;
+    }
+    
+    .card:hover .description {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    .section {
+        height: auto;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .project:hover{
+      text-decoration: none;
+    }
+    .projectX{
+      background-color: aquamarine;
+      text-decoration: none;
+      padding: 10px;
+      color: black;
+
+    }
+    .projectX:hover{
+      text-decoration: none;
+    }
+    .more{
+      color: black;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 30%;
+      font-size: 20px;
+    }
+    .more:hover{
+      text-decoration: none;
+      color: black;
+      background-color: #18c0d6;
+      
+    }
+    .send:hover{
+     text-decoration: none;
+
+    }
+    .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+.MERI a:hover{
+  color: #3366cc !important;
+}
+.MERI{
+ background-color: ;
+}
+/*navabr*/
+
+
+.nav-item{
+  margin-left: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+}
+.navbar-nav{
+  margin-left: 300px;
+}
+.one:hover{
+
+  border-bottom: 3px solid #3844ae;
+}
+@media(max-width:1100px){
+  .navbar-nav{
+    margin-left: 200px;
+  }
+}
+@media(max-width:990px){
+  .navbar-nav{
+    margin-left: 0px;
+    
+    
+  }
+  .nav-item:hover{
+    border-bottom: none;
+  }
+}
+/*navbar end*/
+#slideshow img{
+  position: absolute;
+  top: 10em;
+  left: 0;
+  width: 100%;
+  margin-bottom: 1000px;
+}
+
+
+* {box-sizing: border-box;}
+
+.img-comp-container {
+  position: relative;
+  height: 500px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  overflow:hidden;
+}
+
+.img-comp-img img {
+  display:block;
+  vertical-align : middle ;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+</style>
+  
+  <body>
+       <!--navbar start-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light text-capitalize">
+    <a class="navbar-brand" href="home.html">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item one">
+          <a class="nav-link " href="aboutus.html">about us <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item one">
+          <a class="nav-link" href="#">premium</a>
+        </li>
+        <li class="nav-item dropdown one">
+          <a class="nav-link dropdown-toggle" href="service.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            service
+          </a>
+          <div class="dropdown-menu text-uppercase" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="first.html">buy</a>
+            <a class="dropdown-item" href="sell.html">sell</a>
+           
+            <a class="dropdown-item" href="charter.html">charter</a>
+          </div>
+        </li>
+        <li class="nav-item one">
+          <a class="nav-link " href="">login now </a>
+        </li>
+      </ul>
+    </div>
+  </nav> <br><br>
+   <!--navbar end-->
+ 
+  <div class="container">
+    <div id="slideshow">
+        <img src="images..html - Copy/150 to 200 ft.jpg" width="100%"height="700px" >
+        <img src="images..html - Copy/360.jpg" width="100%" height="700px">
+        <img src="images..html - Copy/buying-a-yacht.jpg" width="100%"height="700px" >
+        <img src="images..html - Copy/charter1.jpg" width="100%"height="700px">
+      </div>
+     </div> <br><br>
+  
+      
+   
+        
+        <br><br>
+
+            <div class="container-fluid">
+              <h1 class="text-uppercase text-center h1 font-weight-bolder ">buy a yacht</h1>
+              <p class="h2  text-center mt-5">Your life. Spent wisely.</p>
+
+                <div class="row">
+                    <div class="col-md-6 mt-5 ">
+                      <div class="zoom-wrapper">
+                        <a href="cloud9.html" style="color: black;" class="one">
+                        <img  class="three" src="images..html - Copy/buy/cloud9 (1).jpg"  alt="" width="100%" height="365px" >
+                      </div>  
+                      <p class=" text-uppercase h3 font-weight-bold  font-italic" style="text-align: center; padding-top: 10px; ;">cloud 9</p>
+                      <h6 class="text-capitalize font-italic ">   EUR 155,000,000    </h6>
+                      <h6 class="text-capitalize font-italic ">  length: 88.5m (290.3ft)  | Guests: 14 in 7 cabins  | Built: 2015  | oceanco   </h6>
+                      
+                      </div> </a>
+                    <div class="col-md-6 mt-5"  >
+                      <div class="zoom-wrapper">
+                        <a href="phoenix2.html" style="color: black;" class="one">
+                            <img  class="three" src="images..html - Copy/buy/phoenix_2_00006069_vb1073730_2000x800.jpg"  alt="" width="100%" height="365px" >
+                      </div> 
+                        <p class="text-uppercase h3 font-weight-bold font-italic "style="text-align: center; padding-top: 10px; ">phoenix 2</p>
+                        <h6 class="text-capitalize font-italic ">   EUR 126,000,000    </h6>
+                         <h6 class="text-capitalize font-italic "> length: 90m (295.3ft)  | Guests: 14 in 7 cabins  | Built: 2010   | lurssen-werft        </h6>       
+                    </div></a>
+                    <div class="col-md-6 mt-5"  >
+                        <div class="zoom-wrapper">
+                          <a href="illusionplus.html" style="color: black;" class="one">
+                              <img  class="three" src="images..html - Copy/buy/webvb1663618.jpg"  alt="" width="100%" height="365px" >
+                        </div> 
+                          <p class="text-uppercase h3 font-weight-bold font-italic "style="text-align: center; padding-top: 10px; ">illusion plus</p>
+                          <h6 class="text-capitalize font-italic ">   EUR 79,800,000    </h6>
+                           <h6 class="text-capitalize font-italic ">  length: 88.5m (290.4ft)  | Guests: 16 in 8 cabins  | Built: 2018  | pride mega yacht      </h6>       
+                      </div></a>
+                      <div class="col-md-6 mt-5"  >
+                        <div class="zoom-wrapper">
+                          <a href="PROJECTX.html" style="color: black;" class="one">
+                              <img  class="three" src="images..html - Copy/buy/projectx1.jpg"  alt="" width="100%" height="365px" >
+                        </div> 
+                          <p class="text-uppercase h3 font-weight-bold font-italic "style="text-align: center; padding-top: 10px; ">Project X</p>
+                          <h6 class="text-capitalize font-italic ">   EUR 160,000,000    </h6>
+                           <h6 class="text-capitalize font-italic "> length: 88m (288.6ft)  | Guests: 19 in 9 cabins  | Built: 2022  | golden yacht       </h6>       
+                      </div></a>
+                      <div class="col-md-6 mt-5"  >
+                        <div class="zoom-wrapper">
+                          <a href="aurora.html" style="color: black;" class="one">
+                              <img  class="three" src="images..html - Copy/buy/aurora3.jpg"  alt="" width="100%" height="365px" >
+                        </div> 
+                          <p class="text-uppercase h3 font-weight-bold font-italic "style="text-align: center; padding-top: 10px; ">aurora</p>
+                          <h6 class="text-capitalize font-italic ">   EUR 130,000,000    </h6>
+                           <h6 class="text-capitalize font-italic ">  length: 74m (242.8ft)  | Guests: 14 in 7 cabins  | Built: 2017  | lurssen-werft        </h6>       
+                      </div></a>
+                      <div class="col-md-6 mt-5"  >
+                        <div class="zoom-wrapper">
+                          <a href="seawalk.html" style="color: black;" class="one">
+                              <img  class="three" src="images..html - Copy/buy/seawalk1.jpg"  alt="" width="100%" height="365px" >
+                        </div> 
+                          <p class="text-uppercase h3 font-weight-bold font-italic "style="text-align: center; padding-top: 10px; ">sea walk</p>
+                          <h6 class="text-capitalize font-italic ">   EUR 34,750,000    </h6>
+                           <h6 class="text-capitalize font-italic ">  length: 62.3m (204.4ft)  | Guests: 12 in 6 cabins  | Built: 2005  refitted(2014) | oceanco     </h6>       
+                      </div></a>
+           
+              
+                </div>
+              </div>
+              <br><br>
+              <div class="container-fluid  ">
+                <h1 class="text-uppercase text-center h1 font-weight-bolder text-primary mt-5 ">editorial</h1>
+
+
+                <div class="row ">
+                  <div class="bg-light col-md-5 text-capitalize MERI ml-5 pl-5 pr-5 pt-5 pb-5 mt-5">
+                    <a href="charter.html" class="text-dark">
+                    <img src="images..html - Copy/charter.jpg" alt="" width="100%" height="255px">
+                    <br><br><br><br>
+                    <p class=" text-uppercase h3 font-weight-bold  font-italic">moonlight ||</p>
+                    <p class="text-capitalize font-italic "> <br>length: 88.5m (290.4ft)  | Guests: 16 in 8 cabins  | Built: 2018  | pride mega yachts</p>
+                    <span style="font-size: 30PX;">Take a virtual Look</span>
+                    </a>
+                  </div>
+                  <div class="bg-light col-md-5 MERI pl-5 pr-5 mt-5 pt-5 pb-5  ml-5">
+                    <a href="https://en.wikipedia.org/wiki/Superyacht" class="text-dark">
+                       <div class="ig">
+                        <img  src="images/editorial.JPG" alt="" width="100%" height="255px">
+                      </div>
+                      <div class="contenttt">
+                        <p class="text-capitalize font-italic   " style="font-size: 20px;"> A superyacht or megayacht is a large and luxurious pleasure vessel. There are no official or agreed upon definitions for such yachts, but these terms are regularly used to describe professionally crewed motor or sailing yachts,
+
+                      </p>
+                      <span style="font-size: 30PX;text-transform: capitalize;">read more</span>
+                    </div>
+                     
+                      </a>
+                  </div>
+                </div>
+
+              </div>
+              <div class="container mb-5 pb-5 pt-5">
+                <div class="row bg-light mt-5 ">
+                 <div class="col-md-5 ml-5    mt-5 ">
+                  <a href="https://en.wikipedia.org/wiki/Boat" class="text-dark">
+                    <img src="images/buying-a-yacht.jpg" alt="" width="100%" height="305px">
+                </div>
+                <div class="col-md-6 mt-5  MERI">
+                  <p style="font-size: 20px;text-transform: capitalize;font-style: italic;">Motor Yacht A (MY A) is a superyacht designed by Philippe Starck and engineered by naval architect Martin Francis.[5][6][7][8] It was built by the Blohm + Voss shipyard at the HDW deepwater facility in Kiel.[9][10] It was ordered in November 2004, and delivered in 2008 at a rumoured cost of US$300 million.[11][12] With a length of 119 metres (390 ft) and measuring almost 6,000 tonnes,
+
+                  </p>
+                  <span style="font-size: 30PX;text-transform: capitalize;">read more</span>
+
+                </a>
+                </div>
+                </div>
+              </div>
+              
+
+
+
+
+             
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">The website we are currently working on is about, Buying & selling of yacht a customer who visit our website can see the current price of boat. We have very resonable price of boats. You can see it by rating of owr boat we have all type of boat available you can also take on parties & picnic    </p>
+            </div>
+      
+            <div class="col-xs-6 col-md-3">
+              <h6>Categories</h6>
+              <ul class="footer-links">
+                <li>ILLUSION PLUS</li>
+                <li>PROJECT X</li>
+                <li>LUSINE</li>
+                <li>SARASATAR</li>
+                <li>MUCHOS MAS </li>
+                <li>MATSU</li>
+              </ul>
+            </div>
+      
+            <div class="col-xs-6 col-md-3">
+              <h6>Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="aboutus.html">About Us</a></li>
+               <li><a href="contactus.html">Contact Us</a></li>
+              
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+           <a href="#">Scanfcode</a>.
+              </p>
+            </div>
+      
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="https://twitter.com/?lang=en"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="https://dribbble.com/tags/dribbler"><i class="fa fa-dribbble"></i></a></li>
+            
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>  
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+          $(document).ready(function (){
+  var images = $("#slideshow img");
+  var numImages = images.size();
+  var durationMs = duration * 1000;
+  var imageTime = durationMs / numImages; // time the image is visible 
+  var fadeTime = imageTime * fadeAmount; // time for cross fading
+  var visibleTime = imageTime  - (imageTime * fadeAmount * 2);// time the image is visible with opacity == 1
+  var animDelay = visibleTime * (numImages - 1) + fadeTime * (numImages - 2); // animation delay/offset for a single image 
+  
+  images.each( function( index, element ){
+    if(index != 0){
+      $(element).css("opacity","0");
+      setTimeout(function(){
+        doAnimationLoop(element,fadeTime, visibleTime, fadeTime, animDelay);
+      },visibleTime*index + fadeTime*(index-1));
+    }else{
+      setTimeout(function(){
+        $(element).animate({opacity:0},fadeTime, function(){
+          setTimeout(function(){
+            doAnimationLoop(element,fadeTime, visibleTime, fadeTime, animDelay);
+          },animDelay )
+        });
+      },visibleTime);
+    }
+  });
+});
+
+// creates a animation loop
+function doAnimationLoop(element, fadeInTime, visibleTime, fadeOutTime, pauseTime){
+  fadeInOut(element,fadeInTime, visibleTime, fadeOutTime ,function(){
+    setTimeout(function(){
+      doAnimationLoop(element, fadeInTime, visibleTime, fadeOutTime, pauseTime);
+    },pauseTime);
+  });
+}
+
+// shorthand for in- and out-fading
+function fadeInOut( element, fadeIn, visible, fadeOut, onComplete){
+  return $(element).animate( {opacity:1}, fadeIn ).delay( visible ).animate( {opacity:0}, fadeOut, onComplete);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </script> 
+  </body>
+</html>
